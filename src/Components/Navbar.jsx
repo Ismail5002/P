@@ -5,6 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="flex justify-between">
+      Hello
       <Link to="/POST">POST</Link>
       <Link to="/GET">GET</Link>
       <span>
