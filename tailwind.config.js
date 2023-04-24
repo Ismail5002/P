@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "background": "url(/back.webp)",
+
+      }
+    },
   },
   plugins: [],
 }

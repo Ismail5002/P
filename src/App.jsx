@@ -4,9 +4,11 @@ import AppRoutes from "./Components/AppRoutes";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <AppRoutes />
+    <div className="bg-background  w-[100%] h-[100%]">
+      <div>
+        <Navbar />
+        <AppRoutes />
+      </div>
     </div>
   );
 };

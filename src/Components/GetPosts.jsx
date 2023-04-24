@@ -16,29 +16,36 @@ const GetPosts = ({ posts }) => {
     <div>
       <button
         style={{ width: 100, height: 100, fontSize: 20 }}
-        className="ownbtn"
+        className=" text-sky-300"
         onClick={getPost}
       >
         GET
       </button>
-      <div className="posts">
+      <div className="">
         {posts.map((p) => {
           return (
-            <div key={p.id}>
-              <div>Name: {p.title}</div>
-              <div>{p.price}$</div>
-              <div>description: {p.description}</div>
+            <div
+              className="text-red-900 flex justify-center flex-col items-center "
+              key={p.id}
+            >
+              <div className="text-red-900">Name: {p.title}</div>
+              <div className="text-red-900">{p.price}$</div>
+              <div className="text-red-900">description: {p.description}</div>
               <Link to={`/GET/products/${p.id}`}>
-                <img alt={`${p.title}`} src={p.images[0]} />
+                <img
+                  className=" w-[150px] h-[150px]"
+                  alt={`${p.title}`}
+                  src={p.images[0]}
+                />
               </Link>
               <div>
                 <button
-                  style={{ width: 200, height: 100 }}
+                  style={{ width: 100, height: 70 }}
                   onClick={() => {
                     deletePost(p.id);
                   }}
                 >
-                  Delete
+                  <p className="text-black-900">Delete</p>
                 </button>
               </div>
             </div>

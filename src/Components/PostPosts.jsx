@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-
 import { postPosts } from "../Store/posts/postsReducer";
 
 const PostPosts = () => {
@@ -14,13 +13,13 @@ const PostPosts = () => {
     categoryId: 1,
   });
 
-  console.log(values.images);
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(postPosts(values));
+
     setValues({
       ...values,
       title: "",
@@ -32,8 +31,9 @@ const PostPosts = () => {
 
   return (
     <section className="">
-      <form className="">
-        <div className="">
+      <form className="flex flex-col justify-center p-10 m-10 ">
+        <div className="flex gap-3 p-3 m-3 justify-center">
+          <div className=" text-sky-500">Название</div>
           <input
             type="text"
             name="title"
@@ -46,7 +46,8 @@ const PostPosts = () => {
             required
           />
         </div>
-        <div className="">
+        <div className="flex gap-3 p-3 m-3 justify-center">
+          <div className=" text-sky-500">Цена</div>
           <input
             type="number"
             name="price"
@@ -59,7 +60,8 @@ const PostPosts = () => {
             required
           />
         </div>
-        <div className="">
+        <div className="flex gap-3 p-3 m-3 justify-center">
+          <div className=" text-sky-500">Описание</div>
           <input
             type="text"
             name="description"
@@ -72,7 +74,9 @@ const PostPosts = () => {
             required
           />
         </div>
-        <div className="">
+        <div className="flex gap-3 p-3 m-3 justify-center">
+          <div className=" text-sky-500">Фотография</div>
+
           <input
             type="text"
             name="images"
@@ -86,8 +90,8 @@ const PostPosts = () => {
           />
         </div>
 
-        <button onClick={handleSubmit} className="">
-          Update
+        <button onClick={handleSubmit} className=" text-cyan-100">
+          Add a new product
         </button>
       </form>
     </section>

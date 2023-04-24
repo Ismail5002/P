@@ -11,9 +11,7 @@ export const getPosts = createAsyncThunk(
   "posts/getPosts",
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(
-        `https://api.escuelajs.co/api/v1/categories/1/products`
-      );
+      const res = await axios.get(`${BASE_URL}products`);
       console.log(res.data);
       return res.data;
     } catch (e) {
